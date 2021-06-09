@@ -3,9 +3,6 @@ package calculadora;
 import java.util.Scanner;
 
 public class TestRPN{
-		
-	
-	
 	public static void main(String args[]) {
 		while(true) {
 			Scanner in = new Scanner(System.in);
