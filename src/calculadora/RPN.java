@@ -49,6 +49,7 @@ public class RPN {
 		 a = popPila( );
 		pushPila(a%b);;
 	}
+	//Refact 1 extraer bucle
 	public String  obtenerStr(String temp,int i) {
 		for(int j = 0; (j < 100) && (Character.isDigit(
 				commando.charAt(i)) || (commando.charAt(i) == '.')); j++, i++) {
@@ -59,7 +60,7 @@ public class RPN {
 	}
 	public double resultado( ) {
 		double a, b;
-		int j;
+		//int j;
 		for(int i = 0; i < commando.length(); i++) {
 			// si es un digito
 			if(Character.isDigit(commando.charAt(i))) {
