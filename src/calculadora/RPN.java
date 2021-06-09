@@ -3,6 +3,7 @@ package calculadora;
 public class RPN {
 	private String commando;
 	private NodoPila arriba;
+	private double a,b;
 	
 	public void pushPila(double nuevo_dato) {
 		NodoPila nuevo_nodo = new NodoPila(nuevo_dato, arriba);
@@ -19,33 +20,33 @@ public class RPN {
 	}
 	//Refac_2 Extraer operaciones en metodos
 	public void suma() {
-		double b = popPila( );
-		double a = popPila( );
+		 b = popPila( );
+		 a = popPila( );
 		pushPila(a + b);
 	}
 	public void resta() {
-		double b = popPila( );
-		double a = popPila( );
+		 b = popPila( );
+		 a = popPila( );
 		pushPila(a - b);
 	}
 	public void multi() {
-		double b = popPila( );
-		double a = popPila( );
+		 b = popPila( );
+		 a = popPila( );
 		pushPila(a * b);
 	}
 	public void divi() {
-		double b = popPila( );
-		double a = popPila( );
+		 b = popPila( );
+		 a = popPila( );
 		pushPila(a / b);
 	}
 	public void expo() {
-		double b = popPila( );
-		double a = popPila( );
+		 b = popPila( );
+		 a = popPila( );
 		pushPila(Math.pow(a, b));
 	}
 	public void per() {
-		double b = popPila( );
-		double a = popPila( );
+		 b = popPila( );
+		 a = popPila( );
 		pushPila(a%b);;
 	}
 	public double resultado( ) {
