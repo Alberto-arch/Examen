@@ -17,6 +17,37 @@ public class RPN {
 		arriba = null;
 		this.commando = commando;
 	}
+	//Refac_2 Extraer operaciones en metodos
+	public void suma() {
+		double b = popPila( );
+		double a = popPila( );
+		pushPila(a + b);
+	}
+	public void resta() {
+		double b = popPila( );
+		double a = popPila( );
+		pushPila(a - b);
+	}
+	public void multi() {
+		double b = popPila( );
+		double a = popPila( );
+		pushPila(a * b);
+	}
+	public void divi() {
+		double b = popPila( );
+		double a = popPila( );
+		pushPila(a / b);
+	}
+	public void expo() {
+		double b = popPila( );
+		double a = popPila( );
+		pushPila(Math.pow(a, b));
+	}
+	public void per() {
+		double b = popPila( );
+		double a = popPila( );
+		pushPila(a%b);;
+	}
 	public double resultado( ) {
 		double a, b;
 		int j;
@@ -35,30 +66,17 @@ public class RPN {
 				numero = Double.parseDouble(temp);
 				pushPila(numero);
 			} else if(commando.charAt(i) == '+') {
-				b = popPila( );
-				a = popPila( );
-				pushPila(a + b);
+				suma();
 			} else if(commando.charAt(i) == '-') {
-				b = popPila( );
-				a = popPila( );
-				pushPila(a - b);
+				resta();
 			} else if(commando.charAt(i) == '*') {
-				b = popPila( );
-				a = popPila( );
-				pushPila(a * b);
+				multi();
 			} else if(commando.charAt(i) == '/') {
-				b = popPila( );
-				a = popPila( );
-				pushPila(a / b);
-			}
-			else if(commando.charAt(i) == '^') {
-				b = popPila( );
-				a = popPila( );
-				pushPila(Math.pow(a, b));}
-			else if(commando.charAt(i) == '%') {
-				b = popPila( );
-				a = popPila( );
-				pushPila(a%b);
+				divi();
+			}else if(commando.charAt(i) == '^') {
+				expo();
+			}else if(commando.charAt(i) == '%') {
+				per();
 			} else if(commando.charAt(i) != ' ') {
 				throw new IllegalArgumentException( );
 			}
