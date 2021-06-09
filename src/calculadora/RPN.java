@@ -49,6 +49,14 @@ public class RPN {
 		 a = popPila( );
 		pushPila(a%b);;
 	}
+	public String  obtenerStr(String temp,int i) {
+		for(int j = 0; (j < 100) && (Character.isDigit(
+				commando.charAt(i)) || (commando.charAt(i) == '.')); j++, i++) {
+			temp = temp + String.valueOf(commando.
+					charAt(i));
+		}
+		return temp;
+	}
 	public double resultado( ) {
 		double a, b;
 		int j;
@@ -58,11 +66,7 @@ public class RPN {
 				double numero;
 				// obtener un string a partir del numero
 				String temp = "";
-				for(j = 0; (j < 100) && (Character.isDigit(
-						commando.charAt(i)) || (commando.charAt(i) == '.')); j++, i++) {
-					temp = temp + String.valueOf(commando.
-							charAt(i));
-				}
+				obtenerStr(temp,i);
 				// convertir a double y añadir a la pila
 				numero = Double.parseDouble(temp);
 				pushPila(numero);
